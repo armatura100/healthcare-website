@@ -1,0 +1,40 @@
+$title-color: #3D3D3F;
+$accent-color: #40A3F8;
+
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin btn {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 30px;
+
+	padding: 10px 20px;
+	background: $accent-color;
+	color: #fff;
+	border-radius: 5px;
+
+	@include flexCenter;
+}
+
+@mixin btnHover {
+	border: 1px solid transparent;
+	transition: all .3s;
+
+	&:hover {
+		border-color: $accent-color;
+		background: transparent;
+		color: $accent-color;
+	}
+}
+
+%title-font {
+	font-size: 42px;
+	font-weight: 500;
+	line-height: 49px;
+	color: $title-color;
+}
