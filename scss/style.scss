@@ -141,6 +141,7 @@
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
 	color: rgba(#6E5F5F, .3);
+	display: flex;
 	
 	&__link {
 		margin-right: 50px;
@@ -220,14 +221,12 @@
 
 	&__title {
 		@extend %title-font;
-		letter-spacing: 2%;
 		margin-bottom: 24px;
 	}
 
 	&__text {
 		font-size: 18px;
 		line-height: 30px;
-		letter-spacing: 2%;
 		margin-bottom: 10px;
 	}
 
@@ -395,8 +394,7 @@
 
 			position: absolute;
 			bottom: 0;
-			right: 0;
-			left: 0;
+			right: 47%;
 		}
 
 		&::after {
@@ -422,8 +420,9 @@
 	}
 
 	&__items {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 36px;
 		margin-bottom: 58px;
 	}
 
@@ -538,7 +537,7 @@
 
 .reviews {
 	background: linear-gradient(to bottom right, #e9f6fc, #f3fcfc);
-	padding-bottom: 155px;
+	padding-bottom: 35px;
 
 	&__title {
 		@extend %title-font;
@@ -594,7 +593,7 @@
 		box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.05);
 		border: 1px solid #eff6f6;
 		border-radius: 15px;
-		max-width: 370px;
+		width: 370px;
 		min-height: 347px;
 		margin: 0 15px;
 		
@@ -648,19 +647,20 @@
 // ===================== Booking =================
 
 .booking {
-	background: linear-gradient(to bottom right, #e7f9fa, #e9f5fb);
-	padding-bottom: 123px;
+	background: linear-gradient(to bottom right, #f5fcfd, #e9f5fb);
+	padding: 170px 0 123px;
 
 	&__inner {
 		position: relative;
 	}
 
 	&__content {
-		padding-left: 116px;
-		padding-top: 81px;
+		padding: 81px 0 0 116px;
 		position: absolute;
 		top: 0;
 		left: 0;
+		right: 0;
+		z-index: 3;
 	}
 	
 	&__title {
@@ -691,16 +691,16 @@
 		}
 	}
 
-	&__img {
-		position: absolute;
-		right: -90px;
-		bottom: 0;
-	}
-
 	&__bg {
 		max-width: 100%;
 		min-height: 341px;
 		border-radius: 12px;
+	}
+
+	&__img {
+		position: absolute;
+		right: 47px;
+		bottom: 0;
 	}
 }
 
@@ -860,3 +860,5 @@
 		margin-left: 53px;
 	}
 }
+
+@import 'media';

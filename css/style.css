@@ -349,6 +349,9 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   color: rgba(110, 95, 95, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .menu__link {
@@ -439,14 +442,12 @@ body {
 }
 
 .doctors__title {
-  letter-spacing: 2%;
   margin-bottom: 24px;
 }
 
 .doctors__text {
   font-size: 18px;
   line-height: 30px;
-  letter-spacing: 2%;
   margin-bottom: 10px;
 }
 
@@ -624,8 +625,7 @@ body {
   margin: 0 auto;
   position: absolute;
   bottom: 0;
-  right: 0;
-  left: 0;
+  right: 47%;
 }
 
 .team__title::after {
@@ -649,12 +649,11 @@ body {
 }
 
 .team__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 36px;
   margin-bottom: 58px;
 }
 
@@ -788,7 +787,7 @@ body {
 .reviews {
   background: -webkit-gradient(linear, left top, right bottom, from(#e9f6fc), to(#f3fcfc));
   background: linear-gradient(to bottom right, #e9f6fc, #f3fcfc);
-  padding-bottom: 155px;
+  padding-bottom: 35px;
 }
 
 .reviews__title {
@@ -852,7 +851,7 @@ body {
           box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.05);
   border: 1px solid #eff6f6;
   border-radius: 15px;
-  max-width: 370px;
+  width: 370px;
   min-height: 347px;
   margin: 0 15px;
   position: relative;
@@ -905,9 +904,9 @@ body {
 }
 
 .booking {
-  background: -webkit-gradient(linear, left top, right bottom, from(#e7f9fa), to(#e9f5fb));
-  background: linear-gradient(to bottom right, #e7f9fa, #e9f5fb);
-  padding-bottom: 123px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#f5fcfd), to(#e9f5fb));
+  background: linear-gradient(to bottom right, #f5fcfd, #e9f5fb);
+  padding: 170px 0 123px;
 }
 
 .booking__inner {
@@ -915,11 +914,12 @@ body {
 }
 
 .booking__content {
-  padding-left: 116px;
-  padding-top: 81px;
+  padding: 81px 0 0 116px;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  z-index: 3;
 }
 
 .booking__title {
@@ -952,16 +952,16 @@ body {
   color: #fff;
 }
 
-.booking__img {
-  position: absolute;
-  right: -90px;
-  bottom: 0;
-}
-
 .booking__bg {
   max-width: 100%;
   min-height: 341px;
   border-radius: 12px;
+}
+
+.booking__img {
+  position: absolute;
+  right: 47px;
+  bottom: 0;
 }
 
 .footer {
@@ -1142,5 +1142,485 @@ body {
 
 .footer__conditions-item + .footer__conditions-item {
   margin-left: 53px;
+}
+
+.menu-btn {
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  position: absolute;
+  top: 23px;
+  right: 15px;
+  z-index: 3;
+}
+
+.menu-btn__line {
+  width: 100%;
+  height: 3px;
+  background: #40A3F8;
+  border-radius: 3px;
+  position: absolute;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.menu-btn__line::before, .menu-btn__line::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #40A3F8;
+  border-radius: 3px;
+  position: absolute;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.menu-btn__line::before {
+  width: 100%;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.menu-btn__line::after {
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+  width: 100%;
+}
+
+.menu-btn.menu-btn--open .menu-btn__line {
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  background: transparent;
+}
+
+.menu-btn.menu-btn--open .menu-btn__line::before {
+  -webkit-transform: rotate(45deg) translate(14px, -14px);
+          transform: rotate(45deg) translate(14px, -14px);
+}
+
+.menu-btn.menu-btn--open .menu-btn__line::after {
+  -webkit-transform: rotate(-45deg) translate(14px, 14px);
+          transform: rotate(-45deg) translate(14px, 14px);
+  width: 30px;
+}
+
+@media (max-width: 750px) {
+  .steps__title, .doctors__title, .service__title, .team__title, .application__title, .reviews__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+@media (max-width: 400px) {
+  .steps__title, .doctors__title, .service__title, .team__title, .application__title, .reviews__title {
+    font-size: 27px;
+    line-height: 37px;
+  }
+  .doctors__text,
+  .service__text,
+  .team__text,
+  .application__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1385px) {
+  .reviews__items .slick-arrow {
+    top: auto;
+    bottom: -40px;
+  }
+  .reviews__items .slick-prev {
+    left: 45%;
+  }
+  .reviews__items .slick-next {
+    right: 45%;
+  }
+}
+
+@media (max-width: 1250px) {
+  .service .slick-list {
+    margin: 0 0 90px;
+  }
+  .service__item {
+    margin: 0 15px;
+  }
+  .team__item:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .reviews .slick-list {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1150px) {
+  .doctors__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .doctors__content {
+    max-width: 80%;
+  }
+  .doctors__img {
+    margin: -110px 0 0;
+  }
+  .team__items {
+    grid-gap: 15px;
+  }
+  .application__content {
+    margin-left: -266px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    background: url("../img/header/full-bg.png") right bottom no-repeat, rgba(255, 255, 255, 0.6);
+    background-blend-mode: overlay;
+  }
+  .header__text {
+    color: rgba(66, 66, 66, 0.7);
+  }
+  .steps__item + .steps__item {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .header__logo {
+    margin-right: 15%;
+  }
+  .menu-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .menu {
+    min-height: 900px;
+    padding: 70px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: -webkit-gradient(linear, left top, right bottom, from(#e9f7ff), to(#c9e9ff));
+    background: linear-gradient(to bottom right, #e9f7ff, #c9e9ff);
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  .menu__link {
+    font-size: 20px;
+    margin-right: 0;
+    text-align: center;
+    padding: 15px;
+  }
+  .menu--active {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .doctors__content {
+    max-width: 100%;
+  }
+  .team__items {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .team__item {
+    max-width: 100%;
+  }
+  .team__item-img {
+    width: 100%;
+  }
+  .application__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    overflow: hidden;
+    position: relative;
+  }
+  .application__content {
+    max-width: 90%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .application__img {
+    margin: -40px 0;
+  }
+  .application__links {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .reviews .slick-prev {
+    left: 40%;
+  }
+  .reviews .slick-next {
+    right: 40%;
+  }
+  .booking__img {
+    right: 5px;
+  }
+  .footer__top {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-bottom: 20px;
+  }
+  .footer__menu {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .steps__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .steps__item {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .steps__item-title {
+    margin-bottom: 5px;
+  }
+  .steps__item + .steps__item {
+    margin-left: 0;
+  }
+  .doctors__img {
+    max-width: 100%;
+  }
+  .booking__content {
+    padding: 45px 0 0 45px;
+  }
+}
+
+@media (max-width: 615px) {
+  .header__content {
+    text-align: center;
+  }
+  .header__title {
+    font-size: 42px;
+    line-height: 52px;
+    margin: 0 auto 31px;
+  }
+  .header__text {
+    margin: 0 auto 50px;
+  }
+  .header__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header__form-input {
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .header__form-select-wrapper {
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .header__form-select {
+    width: 100%;
+  }
+  .doctors__content {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .doctors__text {
+    margin-bottom: 25px;
+  }
+  .doctors__list {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  .doctors__img {
+    margin-top: 0;
+  }
+  .doctors__btn {
+    margin: 0 auto;
+  }
+  .service {
+    padding-bottom: 60px;
+  }
+  .application {
+    padding: 80px 0;
+  }
+  .booking {
+    padding: 100px 0;
+  }
+  .booking__bg {
+    min-height: 270px;
+  }
+  .booking__img {
+    display: none;
+  }
+  .booking__content {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-align: center;
+    padding: 0;
+  }
+  .booking__title {
+    font-size: 28px;
+    line-height: 34px;
+    padding: 0 10px;
+    margin: 0 auto 30px;
+  }
+  .footer__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .footer__logo {
+    display: inline-block;
+  }
+  .footer__contacts {
+    margin-bottom: 40px;
+  }
+  .footer__social {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer__form {
+    max-width: 100%;
+  }
+  .footer__form-input {
+    text-align: center;
+  }
+  .footer__bottom {
+    padding-bottom: 26px;
+  }
+  .footer__bottom-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .footer__conditions {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header__title {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  .header__text {
+    line-height: 24px;
+  }
+  .header__btn {
+    display: none;
+  }
+  .header__form-input {
+    padding: 10px 20px;
+  }
+  .header__form-select {
+    padding: 10px 35px 10px 50px;
+  }
+  .team__title::before {
+    right: 41%;
+  }
+  .team__title::after {
+    right: 40%;
+  }
+  .team__items {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-gap: 25px;
+  }
+  .team__item-img {
+    max-height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
+  }
+  .reviews__item {
+    padding-left: 20px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .header__form-btn {
+    min-height: 50px;
+  }
+  .doctors {
+    padding-bottom: 40px;
+  }
+  .service .slick-list {
+    margin-bottom: 50px;
+  }
+  .service__text {
+    margin-bottom: 50px;
+  }
+  .service__item {
+    padding: 40px 30px;
+  }
+  .team__text {
+    margin-bottom: 50px;
+  }
+  .application {
+    padding-bottom: 40px;
+  }
+  .reviews .slick-prev {
+    left: 35%;
+  }
+  .reviews .slick-next {
+    right: 35%;
+  }
+}
+
+@media (max-width: 350px) {
+  .application__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .application__link + .application__link {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .booking {
+    padding: 70px 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
