@@ -1,0 +1,130 @@
+@media (max-width: 860px) {
+
+    // header
+    .menu {
+        &__btn {
+            display: flex;
+        }
+
+        &__list {
+            flex-direction: column;
+            background-image: linear-gradient(to bottom right, #e4ffff, #afffff);
+            padding-top: 50px;
+            height: 100vh;
+
+            position: absolute;
+            inset: 77px 0 0;
+
+            transform: translateX(-150%);
+            transition: transform .3s;
+        }
+
+        &__item {
+            text-align: center;
+            width: 100%;
+        }
+
+        &__link {
+            display: block;
+            padding: 10px 0;
+        }
+
+        &__link--cta {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+
+    .menu--active {
+        transform: none;
+    }
+
+    .menu__btn {
+        display: flex;
+    }
+
+    // doctors
+    .doctors {
+
+        &__content {
+            max-width: 100%;
+        }
+    }
+
+    // team
+    .team {
+
+        &__items {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__item {
+            max-width: 100%;
+        }
+
+        &__item-img {
+            width: 100%;
+        }
+    }
+
+    // application
+    .application {
+
+        .container {
+            padding: 0;
+        }
+
+        &__inner {
+            flex-direction: column-reverse;
+            overflow: hidden;
+            position: relative;
+        }
+
+        &__content {
+            max-width: 90%;
+            text-align: center;
+            margin-left: 0;
+        }
+
+        &__img {
+            margin: -40px 0;
+        }
+
+        &__links {
+            justify-content: center;
+        }
+    }
+
+    // reviews
+    .reviews {
+
+        .slick-prev {
+            left: 40%;
+        }
+
+        .slick-next {
+            right: 40%;
+        }
+    }
+
+    // booking
+    .booking {
+
+        &__img {
+            right: 5px;
+        }
+    }
+
+    // footer
+    .footer {
+
+        &__top {
+            justify-content: space-around;
+            padding-bottom: 20px;
+        }
+
+        &__menu {
+            display: none;
+        }
+    }
+}

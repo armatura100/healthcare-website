@@ -1,0 +1,50 @@
+@media (max-width: 1150px) {
+
+    // intro
+    .intro {
+        &__img {
+            display: none;
+        }
+
+        &__content {
+            text-align: center;
+        }
+
+        &__title {
+            margin-inline: auto;
+        }
+
+        &__text {
+            margin-inline: auto;
+        }
+    }
+
+    // doctors
+    .doctors {
+        &__inner {
+            flex-direction: column-reverse;
+        }
+
+        &__content {
+            max-width: 80%;
+        }
+
+        &__img {
+            margin: -110px 0 0;
+        }
+    }
+
+    // team
+    .team {
+        &__items {
+            grid-gap: 15px;
+        }
+    }
+
+    // application
+    .application {
+        &__content {
+            margin-left: -266px;
+        }
+    }
+}

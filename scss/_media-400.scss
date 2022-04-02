@@ -1,0 +1,48 @@
+@media (max-width: 400px) {
+
+    // doctors
+    .doctors {
+        padding-bottom: 40px;
+    }
+
+    // service
+    .service {
+
+        .slick-list {
+            margin-bottom: 50px;
+        }
+
+        &__text {
+            margin-bottom: 50px;
+        }
+
+        &__item {
+            padding: 40px 30px;
+        }
+    }
+
+    // team
+    .team {
+
+        &__text {
+            margin-bottom: 50px;
+        }
+    }
+
+    // application
+    .application {
+        padding-bottom: 40px;
+    }
+
+    // reviews
+    .reviews {
+
+        .slick-prev {
+            left: 35%;
+        }
+
+        .slick-next {
+            right: 35%;
+        }
+    }
+}

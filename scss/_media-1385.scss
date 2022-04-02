@@ -1,0 +1,20 @@
+@media (max-width: 1385px) {
+
+    // reviews
+    .reviews {
+        &__items {
+            .slick-arrow {
+                top: auto;
+                bottom: -40px;
+            }
+
+            .slick-prev {
+                left: 45%;
+            }
+
+            .slick-next {
+                right: 45%;
+            }
+        }
+    }
+}

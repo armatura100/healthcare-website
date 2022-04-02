@@ -5,42 +5,83 @@
 
 
 // ===================== Header =================
-
 .header {
-	height: 100%;
-	background: 
-	url('../img/header/full-bg.png') right bottom no-repeat,
-	linear-gradient(to right, #f0f9fe, #ddeaf3);
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 5;
 
-	&__top {
+	&__inner {
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
 		padding: 15px 0;
 	}
+}
 
-	&__logo {
-		margin-right: auto;
+.menu {
+	&__list {
+		display: flex;
+		align-items: center;
+		column-gap: 45px;
 	}
 
-	&__btn {
-		@include btn;
-		font-size: 16px;
+	&__link {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 500;
+		color: rgba(#6E5F5F, .3);
+
+		transition: color .2s;
+
+		&:hover {
+			color: #40A3F8;
+		}
+	}
+
+	&__link--active {
+		color: #40A3F8;
+	}
+
+	&__link--cta {
+		font-size: 15px;
 		line-height: 22px;
-		padding: 11px 26px;
+		color: #fff;
+		background-color: #40A3F8;
+		display: inline-block;
+		border-radius: 5px;
+		padding: 12px 28px;
 		@include btnHover;
+	}
+}
+
+// ===================== Intro =================
+.intro {
+	background-image: linear-gradient(to right, #f0f9fe, #ddeaf3);
+	padding-top: 37vh;
+	overflow: hidden;
+
+	&__inner {
+		position: relative;
 	}
 
 	&__content {
-		padding: 27vh 0 193px;
+		z-index: 10;
+	}
+
+	&__img {
+		position: absolute;
+		bottom: 0;
+		right: -130px;
+		pointer-events: none;
 	}
 
 	&__title {
 		font-size: 48px;
-		font-weight: 700;
 		line-height: 70px;
-		color: $title-color;
+		font-weight: 700;
+		color: #3E3E3E;
 		max-width: 482px;
-		margin-bottom: 31px;
+		margin-bottom: 30px;
 
 		span {
 			color: $accent-color;
@@ -56,107 +97,93 @@
 	}
 
 	&__form {
-		font-family: 'Poppins', sans-serif;
-		display: flex;
-		padding: 13px;
-		background: #fff;
 		border-radius: 8px;
-		box-shadow: 0px 4px 22px rgba(228, 245, 252, .3);
-		max-width: 566px;
+		box-shadow: 0 4px 22px rgba(228, 245, 252, 0.3);
+		padding: 13px;
+		background-color: #fff;
+		display: inline-flex;
+		margin-bottom: 192px;
 	}
 
 	&__form-input {
-		background: rgba(245, 246, 250, 0.52);
-		padding: 17px 30px;
+		background-color: rgba(245, 246, 250, .52);
 		border-radius: 8px;
-		color: rgba(#000, .7);
-		max-width: 216px;
+		padding: 17px 30px;
+		width: 216px;
+		border: 1px solid transparent;
 		margin-right: 20px;
+
+		transition: border-color .2s,
+			box-shadow .2s;
 
 		&:focus {
 			outline: none;
-			box-shadow: 5px 15px 25px rgba(#c9c9c9, .2);
+			border-color: rgba(#000, .2);
+			box-shadow: 3px 3px 15px rgba(#000, .1);
 		}
-		
+
 		&::placeholder {
 			font-size: 14px;
 			color: rgba(#000, .3)
 		}
 	}
 
-	&__form-select {
-		appearance: none;
-		padding: 17px 35px 17px 50px;
-		font-size: 14px;
-		color: $title-color;
-		background: rgba(245, 246, 250, .5);
-		border-radius: 8px;
-		cursor: pointer;
-		border: 1px solid transparent;
-		
-		
-		&-wrapper {
-			margin-right: 30px;
-			position: relative;
+	&__select-wrapper {
+		position: relative;
+		margin-right: 30px;
 
-			&::before {
-				content: '';
-				display: block;
-				width: 15px;
-				height: 18px;
-				background: url('../img/header/location-icon.svg');
-				pointer-events: none;
+		&::before {
+			content: '';
+			width: 15px;
+			height: 15px;
+			display: block;
+			background-image: url('../img/header/location-icon.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			pointer-events: none;
 
-				position: absolute;
-				left: 27px;
-				top: 19px;
-			}
+			position: absolute;
+			top: 20px;
+			left: 23px;
+		}
 
-			&::after {
-				content: '';
-				display: block;
-				width: 13px;
-				height: 9px;
-				background: url('../img/header/select-arrow.svg');
-				pointer-events: none;
+		&::after {
+			content: '';
+			width: 14px;
+			height: 9px;
+			display: block;
+			background-image: url('../img/header/select-arrow.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			pointer-events: none;
 
-				position: absolute;
-				right: 20px;
-				top: 26px;
-			}
+			position: absolute;
+			top: 25px;
+			right: 20px;
 		}
 	}
 
-	&__form-btn {
-		min-width: 70px;
-		min-height: 60px;
-		background: $accent-color;
+	&__form-select {
+		appearance: none;
+		background-color: rgba(245, 246, 250, .52);
 		border-radius: 8px;
+		padding: 18px 30px 18px 45px;
+		width: 203px;
+	}
+
+	&__form-btn {
+		background-color: $accent-color;
+		border-radius: 8px;
+		width: 70px;
+		height: 59px;
 		cursor: pointer;
 		@include flexCenter;
 	}
 }
 
-.menu {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	color: rgba(#6E5F5F, .3);
-	display: flex;
-	
-	&__link {
-		margin-right: 50px;
-	}
-
-	&__link--active {
-		color: $accent-color;
-	}
-}
-
-
 // ===================== Steps =================
-
 .steps {
-	padding: 75px 0;
+	padding-top: 75px;
 
 	&__title {
 		@extend %title-font;
@@ -203,7 +230,7 @@
 // ===================== Doctors =================
 
 .doctors {
-	padding-bottom: 103px;
+	padding: 75px 0 93px;
 
 	&__inner {
 		display: flex;
@@ -268,6 +295,7 @@
 		}
 
 		@include btnHover;
+
 		&:hover {
 			path {
 				stroke: $accent-color;
@@ -284,7 +312,7 @@
 // ===================== Service =================
 
 .service {
-	padding: 70px 0 100px;
+	padding: 80px 0 100px;
 	background: linear-gradient(to right, #e8f5fb, #f1f5f9);
 
 	&__title {
@@ -299,15 +327,14 @@
 		text-align: center;
 		max-width: 480px;
 		margin: 0 auto 80px;
-	}	
+	}
 
 	&__items {
-		
 		.slick-list {
 			margin: 0 -30px 90px;
 			padding: 0 !important;
 		}
-		
+
 		.slick-dots {
 			@include flexCenter;
 			font-size: 0;
@@ -343,14 +370,14 @@
 		margin: 0 30px;
 
 		transition: border-bottom .3s,
-					background .3s;
+			background .3s;
 
 		&.slick-current {
 			background: #fff;
 			border-bottom: 18px solid rgba($accent-color, .5);
 		}
 	}
-	
+
 	&__item-img {
 		margin: 0 auto 15px;
 	}
@@ -389,7 +416,7 @@
 			display: block;
 			height: 3px;
 			width: 68px;
-			background: linear-gradient(to right , #47C2FF, rgba(#63CBFE, .65));
+			background: linear-gradient(to right, #47C2FF, rgba(#63CBFE, .65));
 			margin: 0 auto;
 
 			position: absolute;
@@ -433,7 +460,7 @@
 		background: linear-gradient(138.88deg, rgba(254, 254, 254, 0) -2.44%, #F9F9F9 -2.43%, rgba(254, 254, 254, 0.51) 98.26%);
 		border-radius: 10px;
 		text-align: center;
-		box-shadow: 0px 4px 120px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 4px 120px rgba(0, 0, 0, 0.05);
 
 		transition: transform .3s;
 
@@ -489,7 +516,7 @@
 // ===================== Application =================
 
 .application {
-	padding: 120px 0;
+	padding: 120px 0 40px;
 	background: linear-gradient(to right, #e7f3fe, #ebf9f3);
 
 	&__inner {
@@ -537,7 +564,8 @@
 
 .reviews {
 	background: linear-gradient(to bottom right, #e9f6fc, #f3fcfc);
-	padding-bottom: 35px;
+	padding-top: 80px;
+	padding-bottom: 25px;
 
 	&__title {
 		@extend %title-font;
@@ -551,7 +579,6 @@
 	}
 
 	&__items {
-		
 		.slick-arrow {
 			background: #D8EDF7;
 			width: 33px;
@@ -590,13 +617,13 @@
 	&__item {
 		padding: 22px 17px 30px 45px;
 		background: linear-gradient(132.1deg, rgba(255, 255, 255, 0.88) 0.65%, #FAFAFA 103.13%);
-		box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 4px 22px rgba(0, 0, 0, 0.05);
 		border: 1px solid #eff6f6;
 		border-radius: 15px;
 		width: 370px;
 		min-height: 347px;
 		margin: 0 15px;
-		
+
 		position: relative;
 
 		&::after {
@@ -648,7 +675,7 @@
 
 .booking {
 	background: linear-gradient(to bottom right, #f5fcfd, #e9f5fb);
-	padding: 170px 0 123px;
+	padding: 190px 0 123px;
 
 	&__inner {
 		position: relative;
@@ -662,7 +689,7 @@
 		right: 0;
 		z-index: 3;
 	}
-	
+
 	&__title {
 		font-size: 40px;
 		font-weight: 700;
@@ -680,7 +707,7 @@
 		background: #fff;
 		color: $accent-color;
 		padding: 14px 16px;
-		box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 4px 22px rgba(0, 0, 0, 0.05);
 		border-radius: 5px;
 		border: 1px solid #fff;
 		transition: all .3s;
@@ -855,7 +882,7 @@
 	&__conditions-item:hover {
 		text-decoration: underline;
 	}
-	
+
 	&__conditions-item + &__conditions-item {
 		margin-left: 53px;
 	}

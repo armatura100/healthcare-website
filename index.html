@@ -18,57 +18,75 @@
 
 	<header class="header">
 		<div class="container">
-			<div class="header__top">
-				<a class="logo header__logo" href="#">
+			<div class="header__inner">
+				<a class="logo" href="#">
 					<img class="logo__img" src="img/logo.svg" alt="logo">
 				</a>
-				<button class="menu-btn" type="button">
-					<span class="menu-btn__line"></span>
-				</button>
 				<nav class="menu">
-					<a class="menu__link menu__link--active" href="#">
-						Home
-					</a>
-					<a class="menu__link" href="#">
-						About
-					</a>
-					<a class="menu__link" href="#">
-						Article
-					</a>
-					<a class="menu__link" href="#">
-						Services
-					</a>
-				</nav>
-				<a class="header__btn" href="#">
-					Get Started
-				</a>
-			</div>
-			<div class="header__content">
-				<h1 class="header__title">
-					Find And Search Your
-					<span>Suitable Doctor’s</span>
-				</h1>
-				<p class="header__text">
-					Join us and take care of yourself and your family with health services that will make you feel
-					confident and safe in your daily life.
-				</p>
-				<form class="header__form" action="#" method="get">
-					<input class="header__form-input" placeholder="Find your doctor" type="text">
-					<div class="header__form-select-wrapper">
-						<select class="header__form-select">
-							<option class="header__form-option" selected>New York, USA</option>
-							<option class="header__form-option">Montana, USA</option>
-							<option class="header__form-option">Los Angeles, USA</option>
-							<option class="header__form-option">Las Vegas, USA</option>
-						</select>
-					</div>
-					<button class="header__form-btn" type="submit">
-						<img class="header__form-icon" src="img/header/search-icon.svg" alt="search icon">
+					<button class="menu__btn">
+						<span class="menu__btn-line"></span>
 					</button>
-				</form>
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a class="menu__link menu__link--active" href="#">
+								Home
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#about">
+								About
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#services">
+								Services
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#clients">
+								Clients
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link menu__link--cta" href="#booking">
+								Get Started
+							</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 	</header>
+
+	<section class="intro">
+		<div class="container">
+			<div class="intro__inner">
+				<div class="intro__content">
+					<h1 class="intro__title">
+						Find And Search Your <span>Suitable Doctor's</span>
+					</h1>
+					<p class="intro__text">
+						Join us and take care of yourself and your family with health services that will make you feel confident and safe in your daily life.
+					</p>
+					<form class="intro__form">
+						<input class="intro__form-input" type="text" placeholder="Find your doctor">
+						<div class="intro__select-wrapper">
+							<select class="intro__form-select">
+								<option>New York, USA</option>
+								<option>Montana, USA</option>
+								<option>Los Angeles, USA</option>
+								<option>Las Vegas, USA</option>
+							</select>
+						</div>
+						<button class="intro__form-btn" type="submit">
+							<img src="img/header/search-icon.svg" alt="search icon">
+						</button>
+					</form>
+				</div>
+				<img class="intro__img" src="img/header/intro.png" alt="doctor">
+			</div>
+		</div>
+	</section>
 
 	<section class="steps">
 		<div class="container">
@@ -81,7 +99,7 @@
 						<img src="img/steps/search.png" alt="search icon">
 					</div>
 					<h5 class="steps__item-title">
-						Find best doctor’s
+						Find best doctor's
 					</h5>
 					<p class="steps__item-text">
 						Find your doctor easily with a minimum of effort. We've kept everything organised for you.
@@ -114,10 +132,10 @@
 		</div>
 	</section>
 
-	<section class="doctors">
+	<section class="doctors" id="about">
 		<div class="container">
 			<div class="doctors__inner">
-				<img class="doctors__img" src="img/doctors/doctor.svg" alt="doctor">
+				<img class="doctors__img" src="img/doctors/doctor.png" alt="doctor">
 				<div class="doctors__content">
 					<h3 class="doctors__title">
 						Best quality service with our experience doctors
@@ -140,10 +158,8 @@
 					<a class="doctors__btn" href="#">
 						<span>Explore specialists</span>
 						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M1 6.25H13.0001" stroke="white" stroke-width="1.5" stroke-linecap="round"
-								stroke-linejoin="round" />
-							<path d="M7.75 1L13 6.25003L7.75 11.5001" stroke="white" stroke-width="1.5"
-								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M1 6.25H13.0001" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M7.75 1L13 6.25003L7.75 11.5001" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 						</svg>
 					</a>
 				</div>
@@ -151,7 +167,7 @@
 		</div>
 	</section>
 
-	<section class="service">
+	<section class="service" id="services">
 		<div class="container">
 			<h3 class="service__title">
 				Our Service
@@ -323,7 +339,7 @@
 		</div>
 	</section>
 
-	<section class="reviews">
+	<section class="reviews" id="clients">
 		<div class="container">
 			<h3 class="reviews__title">
 				Look our Clients have to say about us
@@ -450,12 +466,12 @@
 		</div>
 	</section>
 
-	<div class="booking">
+	<div class="booking" id="booking">
 		<div class="container">
 			<div class="booking__inner">
 				<div class="booking__content">
 					<h6 class="booking__title">
-						It’s time change your life today
+						It's time change your life today
 					</h6>
 					<a class="booking__btn" href="#">
 						Book an Appoinment
@@ -569,7 +585,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/app.js"></script>

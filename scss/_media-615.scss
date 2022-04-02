@@ -1,0 +1,143 @@
+@media (max-width: 615px) {
+
+    // intro
+    .intro {
+
+        &__title {
+            font-size: 31px;
+            line-height: 42px;
+            max-width: 410px;
+        }
+
+        &__text {
+            line-height: 25px;
+        }
+
+        &__form {
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        &__form-input {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &__select-wrapper {
+            width: 100%;
+        }
+
+        &__form-select {
+            width: 100%;
+        }
+
+        &__form-btn {
+            width: 100%;
+        }
+    }
+
+    // doctors
+    .doctors {
+
+        &__content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &__text {
+            margin-bottom: 25px;
+        }
+
+        &__list {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        &__img {
+            margin-top: 0;
+        }
+
+        &__btn {
+            margin: 0 auto;
+        }
+    }
+
+    // service
+    .service {
+        padding-bottom: 60px;
+    }
+
+    // application
+    .application {
+        padding: 80px 0;
+    }
+
+    // booking
+    .booking {
+        padding: 100px 0;
+
+        &__bg {
+            min-height: 270px;
+        }
+
+        &__img {
+            display: none;
+        }
+
+        &__content {
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            padding: 0;
+        }
+
+        &__title {
+            font-size: 28px;
+            line-height: 34px;
+            padding: 0 10px;
+            margin: 0 auto 30px;
+        }
+    }
+
+    // footer
+    .footer {
+
+        &__top {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &__logo {
+            display: inline-block;
+        }
+
+        &__contacts {
+            margin-bottom: 40px;
+        }
+
+        &__social {
+            justify-content: center;
+        }
+
+        &__form {
+            max-width: 100%;
+        }
+
+        &__form-input {
+            text-align: center;
+        }
+
+        &__bottom {
+            padding-bottom: 26px;
+        }
+
+        &__bottom-inner {
+            flex-direction: column-reverse;
+        }
+
+        &__conditions {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@media (max-width: 1250px) {
+
+    // service
+    .service {
+        .slick-list {
+            margin: 0 0 90px;
+        }
+
+        &__item {
+            margin: 0 15px;
+        }
+    }
+
+    // team
+    .team {
+        &__item:hover {
+            transform: none;
+        }
+    }
+
+    // reviews
+    .reviews {
+        .slick-list {
+            margin: 0;
+        }
+    }
+}

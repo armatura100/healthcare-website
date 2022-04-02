@@ -1,0 +1,37 @@
+@media (max-width: 500px) {
+
+    // team
+    .team {
+
+        &__title {
+
+            &::before {
+                right: 41%;
+            }
+
+            &::after {
+                right: 40%;
+            }
+        }
+
+        &__items {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 25px;
+        }
+
+        &__item-img {
+            max-height: 300px;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+    // reviews
+    .reviews {
+
+        &__item {
+            padding-left: 20px;
+            margin: 0 10px;
+        }
+    }
+}
