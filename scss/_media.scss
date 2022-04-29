@@ -46,35 +46,9 @@
 	box-shadow: none;
 }
 
-// ============= Media Queries ===============
-
-// global
-@media (max-width: 750px) {
-	%title-font {
-		font-size: 32px;
-		line-height: 42px;
-	}
-}
-
-@media (max-width: 400px) {
-	%title-font {
-		font-size: 27px;
-		line-height: 37px;
-	}
-
-	.doctors__text,
-	.service__text,
-	.team__text,
-	.application__text {
-		font-size: 16px;
-		line-height: 24px;
-	}
-}
-
 @import 'media-1385';
 @import 'media-1250';
 @import 'media-1150';
-@import 'media-1000';
 @import 'media-860';
 @import 'media-750';
 @import 'media-615';

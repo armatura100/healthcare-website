@@ -2,28 +2,13 @@
 
     // steps
     .steps {
-
-        &__items {
-            flex-direction: column;
-        }
-
-        &__item {
-            max-width: 100%;
-            margin-bottom: 30px;
-        }
-
         &__item-title {
             margin-bottom: 5px;
-        }
-
-        &__item + &__item {
-            margin-left: 0;
         }
     }
 
     // doctors
     .doctors {
-
         &__img {
             max-width: 100%;
         }
@@ -31,7 +16,6 @@
 
     // booking
     .booking {
-
         &__content {
             padding: 45px 0 0 45px;
         }
